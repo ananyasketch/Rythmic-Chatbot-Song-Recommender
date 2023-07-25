@@ -1,0 +1,187 @@
+/* Quiz column styles */
+/* Global styles */
+body {
+	background-color: #222;
+	color: #fff;
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	background-image: url('images/music_player.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+/* Blurred background image in dark theme */
+body.dark-theme::before {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-image: url('images/music_player.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	filter: blur(0px);
+	z-index: -1;
+}
+
+/* Container for options and chat columns */
+.container {
+	display: flex;
+	height: 100vh;
+}
+
+/* Options column styles */
+.options {
+	background-color: #111;
+	width: 20%;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.options h2 {
+	margin-top: 0;
+}
+
+.options ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+	color:white;
+}
+
+.options li {
+	margin: 10px 0;
+	cursor: pointer;
+}
+
+/* Chat and quiz column styles */
+.chat, .quiz {
+	flex: 1;
+	padding: 20px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+
+
+/* Quiz question and answer styles */
+.quiz-question {
+	margin-top: 20px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.quiz-answer {
+	margin: 10px 0;
+}
+
+.quiz-answer label {
+	display: block;
+	margin-bottom: 5px;
+	font-size: 16px;
+}
+
+.quiz-answer input[type="checkbox"] {
+	margin-right: 5px;
+}
+
+.quiz-submit {
+	margin-top: 20px;
+	display: flex;
+	align-items: center;
+}
+
+.quiz-submit button {
+	background-color: #4CAF50;
+	color: #fff;
+	font-size: 16px;
+	border: none;
+	border-radius: 20px;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+
+.quiz-submit button:hover {
+	background-color: #3e8e41;
+}
+
+
+.quiz {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-y: auto;
+}
+
+.quiz h2 {
+    margin-top: 0;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.question h3 {
+    margin-top: 0;
+}
+
+.answers {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.answers li {
+    margin: 10px 0;
+}
+
+.answers input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.submit-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #3e8e41;
+}
+
+/* Mobile responsiveness */
+@media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .options {
+        width: 100%;
+    }
+    
+    .chat {
+        width: 100%;
+    }
+    
+    .quiz {
+        width: 100%;
+    }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dark-themed page with options and chat columns</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body class="dark-theme">
+	<div class="container">
+		<div class="options">
+			<ul>
+				<li style="text-align: center;"><a href="{{ url_for('chat') }}">CHAT</a></li><br><br><hr color="white"><br><br>
+				<li style="text-align: center;"><a href="{{ url_for('plot') }}">ANALYSE EMOTIONS</a></li><br><br><hr color="white"><br><br>
+				<li style="text-align: center;"><a href="{{ url_for('music_lib') }}">MUSIC LIBRARY</a></li>
+				<br><br><hr color="white"><br><br>
+				<li style="text-align: center;"><a href="{{ url_for('quiz') }}">TUNE IN</a></li>
+			</ul>
+		</div>
+		<div class="box"></div>
+		<div class="boxed">
+		  <div>
+			<div id="chatbox">
+			  <p class="botText">
+				<span>Hi! I'm ChatBot</span>
+			  </p>
+			</div>
+			<div id="userInput">
+			  <input id="textInput" type="text" name="msg" placeholder="Enter message here..." />
+			</div>
+		  </div>
+		  <script>
+			function getBotResponse() {
+			  var rawText = $("#textInput").val();
+			  var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
+			  $("#textInput").val("");
+			  $("#chatbox").append(userHtml);
+			  document
+				.getElementById("userInput")
+				.scrollIntoView({ block: "start", behavior: "smooth" });
+			  $.get("/get", { msg: rawText }).done(function(data) {
+				var botHtml = '<p class="botText"><span>' + data + "</span></p>";
+				$("#chatbox").append(botHtml);
+				document
+				  .getElementById("userInput")
+				  .scrollIntoView({ block: "start", behavior: "smooth" });
+			  });
+			}
+			$("#textInput").keypress(function(e) {
+			  if (e.which == 13) {
+				getBotResponse();
+			  }
+			});
+		  </script>
+	</div>
+</body>
+</html>

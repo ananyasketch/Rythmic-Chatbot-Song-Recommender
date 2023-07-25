@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Music Library</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/music_lib.css') }}">
+</head>
+<body class="dark-theme">
+	<div class="container">
+		<div class="options">
+			<ul>
+				<li style="text-align: center;"><a href="{{ url_for('chat') }}">CHAT</a></li><br><br><hr color="white"><br><br>
+				<li style="text-align: center;"><a href="{{ url_for('plot') }}">ANALYSE EMOTIONS</a></li><br><br><hr color="white"><br><br>
+				<li style="text-align: center;"><a href="{{ url_for('music_lib') }}">MUSIC LIBRARY</a></li><br><br><hr color="white"><br><br>
+				<li style="text-align: center;"><a href="{{ url_for('quiz') }}">TUNE IN</a></li>
+			</ul>
+		</div>
+        <header>
+        <div class="nav">
+		<h1> Rythmiq </h1>
+		<form method="post" action="/process_form">
+			<input type="text" name="user_input" placeholder="Last played song...">
+			<input type="submit" value="Search">
+		</form>
+            </div>
+	   </header>
+	   <main>
+        <div class="together">
+            {% for row in rows %}
+                <section>
+                <div class="image-grid">
+                {% for item in row %}
+                    <div class="image-container">
+                    <div class="image-text">
+                    <a href="{{ item[1] }}" target='_blank'>{{ item[0] }}</div><img src="{{ url_for('static', filename='css/images/image1.png') }}"></a></div>
+                {% endfor %}
+                </div>
+            </section>
+            {% endfor %}
+      </div>
+	</main>
+	</div>
+	<script src="app.js"></script>
+</body>
+</html>
+
+
+
+    

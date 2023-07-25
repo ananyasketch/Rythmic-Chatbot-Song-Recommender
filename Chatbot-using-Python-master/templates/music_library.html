@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Music Library</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/music_lib.css') }}">
+</head>
+<body class="dark-theme">
+	<div class="container">
+		<div class="options">
+			<ul>
+				<li style="text-align: center;"><a href="{{ url_for('chat') }}">CHAT</a></li><br><br><hr color="white"><br><br>
+				<li style="text-align: center;"><a href="{{ url_for('plot') }}">ANALYSE EMOTIONS</a></li><br><br><hr color="white"><br><br>
+				<li style="text-align: center;"><a href="{{ url_for('music_') }}">MUSIC LIBRARY</a></li><br><br><hr color="white"><br><br>
+				<li style="text-align: center;"><a href="{{ url_for('quiz') }}">TUNE IN</a></li>
+			</ul>
+		</div>
+        <header>
+        <div class="nav">
+		<h1> Rythmiq </h1>
+		<form method="post" action="/process_form">
+			<input type="text" name="user_input" placeholder="Last played song...">
+			<input type="submit" value="Search">
+		</form>
+            </div>
+	   </header>
+	   <main>
+        <div class="together">
+		<section>
+			<div class="image-grid">
+                <div class="image-container">
+                <div class="image-text">
+                    <a href="https://www.youtube.com/watch?v=u2NAuswnTKs" target='_blank'>Apna Bana Le</div><img src="{{ url_for('static', filename='css/images/image1.png') }}"></a></div>
+				<div class="image-container">
+                <div class="image-text">
+                    <a href="https://www.youtube.com/watch?v=I94fhjQ-U30" target='_blank'>Tum Se Hi</div><img src="{{ url_for('static', filename='css/images/image1.png') }}"></a></div>
+                <div class="image-container">
+                <div class="image-text">
+                    <a href="https://www.youtube.com/watch?v=Gcne5Wt-Qfo" target='_blank'>Pretty Woman</div><img src="{{ url_for('static', filename='css/images/image1.png') }}"></a></div>
+                <div class="image-container">
+                <div class="image-text">
+                    <a href="https://www.youtube.com/watch?v=DB3D-mtWR0c" target='_blank'>Ranjha</div><img src="{{ url_for('static', filename='css/images/image1.png') }}"></a></div>
+			</div>
+		</section>
+		<section>
+			<div class="image-grid">
+				<div class="image-container">
+                <div class="image-text">
+                    <a href="https://www.youtube.com/watch?v=kJQP7kiw5Fk" target='_blank'>Despacito</div><img src="{{ url_for('static', filename='css/images/image1.png') }}"></a></div>
+                <div class="image-container">
+                <div class="image-text">
+                    <a href="https://www.youtube.com/watch?v=x7bNx0VbFKs" target='_blank'>Maahi Ve</div><img src="{{ url_for('static', filename='css/images/image1.png') }}"></a></div>
+                <div class="image-container">
+                <div class="image-text">
+                    <a href="https://www.youtube.com/watch?v=PT2_F-1esPk" target='_blank'>Closer</div><img src="{{ url_for('static', filename='css/images/image1.png') }}"></a></div>
+                <div class="image-container">
+                <div class="image-text">
+                    <a href="https://www.youtube.com/watch?v=QYO6AlxiRE4" target='_blank'>Subhanallah</div><img src="{{ url_for('static', filename='css/images/image1.png') }}"></a></div>
+			</div>
+		</section>
+		<section>
+			<div class="image-grid">
+				<div class="image-container">
+                <div class="image-text">
+                    <a href="https://www.youtube.com/watch?v=jCEdTq3j-0U" target='_blank'>Gallan Goodiyaan</div><img src="{{ url_for('static', filename='css/images/image1.png') }}"></a></div>
+                <div class="image-container">
+                <div class="image-text">
+                    <a href="https://www.youtube.com/watch?v=nYh-n7EOtMA" target='_blank'>Sia - Cheap Thrills</div><img src="{{ url_for('static', filename='css/images/image1.png') }}"></a></div>
+                <div class="image-container">
+                <div class="image-text">
+                    <a href="https://www.youtube.com/watch?v=syFZfO_wfMQ" target='_blank'>Night Changes</div><img src="{{ url_for('static', filename='css/images/image1.png') }}"></a></div>
+                <div class="image-container">
+                <div class="image-text">
+                    <a href="https://www.youtube.com/watch?v=60ItHLz5WEA" target='_blank'>Faded - Alan Walker</div><img src="{{ url_for('static', filename='css/images/image1.png') }}"></a></div>
+			</div>
+		</section>
+				<section>
+			<div class="image-grid">
+				<div class="image-container">
+                <div class="image-text">
+                    <a href="https://www.youtube.com/watch?v=-rSOvmWRG4Y" target='_blank'>Uff Teri Adaa</div><img src="{{ url_for('static', filename='css/images/image1.png') }}"></a></div>
+                <div class="image-container">
+                <div class="image-text">
+                    <a href="https://www.youtube.com/watch?v=P-DhwN87JDY" target='_blank'>Do you Know</div><img src="{{ url_for('static', filename='css/images/image1.png') }}"></a></div>
+                <div class="image-container">
+                <div class="image-text">
+                    <a href="https://www.youtube.com/watch?v=2Vv-BfVoq4g" target='_blank'>Perfect - Ed Sheeran</div><img src="{{ url_for('static', filename='css/images/image1.png') }}"></a></div>
+                <div class="image-container">
+                <div class="image-text">
+                    <a href="https://www.youtube.com/watch?v=PqFMFVcCZgI" target='_blank'>Brown Rang</div><img src="{{ url_for('static', filename='css/images/image1.png') }}"></a></div>
+			</div>
+		</section>
+           		<section>
+			<div class="image-grid">
+				<div class="image-container">
+                <div class="image-text">
+                    <a href="https://www.youtube.com/watch?v=4dsFQFCvVGU" target='_blank'>Kajra Re</div><img src="{{ url_for('static', filename='css/images/image1.png') }}"></a></div>
+                <div class="image-container">
+                <div class="image-text">
+                    <a href="https://www.youtube.com/watch?v=GVhmynWOPoM" target='_blank'>Proper Patola</div><img src="{{ url_for('static', filename='css/images/image1.png') }}"></a></div>
+                <div class="image-container">
+                <div class="image-text">
+                    <a href="https://www.youtube.com/watch?v=vX2cDW8LUWk" target='_blank'>Excuses</div><img src="{{ url_for('static', filename='css/images/image1.png') }}"></a></div>
+                <div class="image-container">
+                <div class="image-text">
+                    <a href="https://www.youtube.com/watch?v=vKb9xwSRrsU" target='_blank'>Pasoori</div><img src="{{ url_for('static', filename='css/images/image1.png') }}"></a></div>
+			</div>
+		</section>
+      </div>
+	</main>
+	</div>
+	<script src="app.js"></script>
+</body>
+</html>

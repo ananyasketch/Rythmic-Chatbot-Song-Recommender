@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dark-themed page with options and chat columns</title>
+  	<link rel="stylesheet" href="{{ url_for('static', filename='css/plot.css') }}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<style>
+		body {
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body class="dark-theme">
+	<div class="container">
+		<div class="options">
+			<ul>
+				<li style="text-align: center;"><a href="{{ url_for('chat') }}">CHAT</a></li><br><br><hr color="white"><br><br>
+				<li style="text-align: center;"><a href="{{ url_for('plot') }}">ANALYSE EMOTIONS</a></li><br><br><hr color="white"><br><br>
+				<li style="text-align: center;"><a href="{{ url_for('music_lib') }}">MUSIC LIBRARY</a></li>
+				<br><br><hr color="white"><br><br>
+				<li style="text-align: center;"><a href="{{ url_for('quiz') }}">TUNE IN</a></li>
+            </ul>
+		</div>
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<div style="margin-left: 180px; margin-top: 20px;">
+				<img src="data:image/png;base64,{{ image }}">
+			</div>
+			<div>
+ <h1>{{ message }}</h1>
+</div>
+		</div>
+	</div>
+</body>
+</html>
